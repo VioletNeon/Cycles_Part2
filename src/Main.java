@@ -28,5 +28,23 @@ public class Main {
         }
 
         System.out.println("\n");
+
+        // Task-3
+        byte natality = 17;
+        byte mortality = 8;
+        byte billingPeriod = 10;
+        short yearCount = 2024;
+        int population = 12_000_000;
+
+        for (byte i = 1; i <= billingPeriod; i++) {
+            short populationPerThousand = (short) (population / 1000);
+            int natalityPerPopulation = populationPerThousand * natality;
+            int mortalityPerPopulation = populationPerThousand * mortality;
+
+            yearCount++;
+            population = population + (natalityPerPopulation - mortalityPerPopulation);
+
+            System.out.println("Год " + yearCount +  ", численность населения составляет " + population);
+        }
     }
 }
