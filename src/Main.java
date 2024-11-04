@@ -79,5 +79,25 @@ public class Main {
 
             monthCount++;
         }
+
+        System.out.println("\n");
+
+        // Task-6
+        savings = 15_000;
+        monthCount = 1;
+        byte monthInYear = 12;
+        byte expectedPeriod = 9;
+        short expectedPeriodByMonths = (short) (monthInYear * expectedPeriod);
+
+        while (monthCount <= expectedPeriodByMonths) {
+            savings = savings + (savings * depositRate / 100);
+            boolean isMultipleOfSix = monthCount % 6 == 0;
+
+            if (isMultipleOfSix) {
+                System.out.println("Месяц " + monthCount +  ", сумма накоплений составляет " + savings);
+            }
+
+            monthCount++;
+        }
     }
 }
