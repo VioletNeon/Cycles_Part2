@@ -46,5 +46,23 @@ public class Main {
 
             System.out.println("Год " + yearCount +  ", численность населения составляет " + population);
         }
+
+        System.out.println("\n");
+
+        // Task-4
+        int savings = 15_000;
+        byte depositRate = 7;
+        int expectedAmountOfSavings = 12_000_000;
+        byte monthCount = 1;
+
+        while (savings <= expectedAmountOfSavings) {
+            savings = savings + (savings * depositRate / 100);
+
+            System.out.println("Месяц " + monthCount +  ", сумма накоплений составляет " + savings);
+
+            monthCount++;
+        }
+
+        System.out.println("\n");
     }
 }
