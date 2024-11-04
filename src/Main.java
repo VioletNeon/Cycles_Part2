@@ -9,8 +9,10 @@ public class Main {
         while (amountOfSavings <= desiredAmountOfSavings) {
             countOfMonths++;
             amountOfSavings += monthlySavings;
+            System.out.println("Месяц " + countOfMonths + ", сумма накоплений равна " + amountOfSavings + " рублей");
         }
-        System.out.println("\n" + "Месяц " + countOfMonths + ", сумма накоплений равна " + amountOfSavings + " рублей" + "\n");
+
+        System.out.println("\n");
 
         // Task-2
         byte startNumber = 1;
