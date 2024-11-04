@@ -99,5 +99,17 @@ public class Main {
 
             monthCount++;
         }
+
+        System.out.println("\n");
+
+        // Task-7
+        byte fridayCountdown = 3;
+        byte dayPerWeek = 7;
+        byte dayPerMonth = 31;
+
+        do {
+            System.out.println("Сегодня пятница, " + fridayCountdown + "-е число. Необходимо подготовить отчет");
+            fridayCountdown = (byte) (fridayCountdown + dayPerWeek);
+        } while (fridayCountdown <= dayPerMonth);
     }
 }
