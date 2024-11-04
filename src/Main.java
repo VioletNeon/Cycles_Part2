@@ -8,7 +8,7 @@ public class Main {
 
         while (amountOfSavings <= desiredAmountOfSavings) {
             countOfMonths++;
-            amountOfSavings = amountOfSavings + monthlySavings;
+            amountOfSavings += monthlySavings;
         }
         System.out.println("\n" + "Месяц " + countOfMonths + ", сумма накоплений равна " + amountOfSavings + " рублей" + "\n");
 
@@ -23,7 +23,7 @@ public class Main {
 
         System.out.println();
 
-        for (byte i = endNumber; i > 0; i-- ) {
+        for (byte i = endNumber; i > 0; i--) {
             System.out.print(i + " ");
         }
 
@@ -42,9 +42,9 @@ public class Main {
             int mortalityPerPopulation = populationPerThousand * mortality;
 
             yearCount++;
-            population = population + (natalityPerPopulation - mortalityPerPopulation);
+            population += natalityPerPopulation - mortalityPerPopulation;
 
-            System.out.println("Год " + yearCount +  ", численность населения составляет " + population);
+            System.out.println("Год " + yearCount + ", численность населения составляет " + population);
         }
 
         System.out.println("\n");
@@ -56,9 +56,9 @@ public class Main {
         byte monthCount = 1;
 
         while (savings <= expectedAmountOfSavings) {
-            savings = savings + (savings * depositRate / 100);
+            savings += savings * depositRate / 100;
 
-            System.out.println("Месяц " + monthCount +  ", сумма накоплений составляет " + savings);
+            System.out.println("Месяц " + monthCount + ", сумма накоплений составляет " + savings);
 
             monthCount++;
         }
@@ -70,11 +70,11 @@ public class Main {
         monthCount = 1;
 
         while (savings <= expectedAmountOfSavings) {
-            savings = savings + (savings * depositRate / 100);
+            savings += savings * depositRate / 100;
             boolean isMultipleOfSix = monthCount % 6 == 0;
 
             if (isMultipleOfSix) {
-                System.out.println("Месяц " + monthCount +  ", сумма накоплений составляет " + savings);
+                System.out.println("Месяц " + monthCount + ", сумма накоплений составляет " + savings);
             }
 
             monthCount++;
@@ -90,11 +90,11 @@ public class Main {
         short expectedPeriodByMonths = (short) (monthInYear * expectedPeriod);
 
         while (monthCount <= expectedPeriodByMonths) {
-            savings = savings + (savings * depositRate / 100);
+            savings += savings * depositRate / 100;
             boolean isMultipleOfSix = monthCount % 6 == 0;
 
             if (isMultipleOfSix) {
-                System.out.println("Месяц " + monthCount +  ", сумма накоплений составляет " + savings);
+                System.out.println("Месяц " + monthCount + ", сумма накоплений составляет " + savings);
             }
 
             monthCount++;
@@ -109,7 +109,26 @@ public class Main {
 
         do {
             System.out.println("Сегодня пятница, " + fridayCountdown + "-е число. Необходимо подготовить отчет");
-            fridayCountdown = (byte) (fridayCountdown + dayPerWeek);
+            fridayCountdown += dayPerWeek;
         } while (fridayCountdown <= dayPerMonth);
+
+        System.out.println("\n");
+
+        // Task-8
+        short yearCountdown = 0;
+        short currentYear = 2024;
+        byte periodOfFlightOfCometByYear = 79;
+        short expectedPeriodAfter = 100;
+        short expectedPeriodBefore = 200;
+        short startPeriod = (short) (currentYear - expectedPeriodBefore);
+        short endPeriod = (short) (currentYear + expectedPeriodAfter);
+
+        while (yearCountdown <= endPeriod) {
+            if (yearCountdown >= startPeriod) {
+                System.out.println(yearCountdown);
+            }
+
+            yearCountdown += periodOfFlightOfCometByYear;
+        }
     }
 }
