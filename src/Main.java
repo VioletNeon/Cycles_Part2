@@ -64,5 +64,20 @@ public class Main {
         }
 
         System.out.println("\n");
+
+        // Task-5
+        savings = 15_000;
+        monthCount = 1;
+
+        while (savings <= expectedAmountOfSavings) {
+            savings = savings + (savings * depositRate / 100);
+            boolean isMultipleOfSix = monthCount % 6 == 0;
+
+            if (isMultipleOfSix) {
+                System.out.println("Месяц " + monthCount +  ", сумма накоплений составляет " + savings);
+            }
+
+            monthCount++;
+        }
     }
 }
